@@ -1172,6 +1172,16 @@ static const CGFloat kTOCropViewControllerToolbarHeight = 44.0f;
     return self.cropView.imageCropFrame;
 }
 
+- (void)setCropOverlayImage:(UIImage *)cropOverlayImage
+{
+    self.cropView.overlayImage = cropOverlayImage;
+}
+
+- (UIImage *)cropOverlayImage
+{
+    return self.cropView.overlayImage;
+}
+
 - (BOOL)verticalLayout
 {
     return CGRectGetWidth(self.view.bounds) < CGRectGetHeight(self.view.bounds);

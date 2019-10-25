@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 /** Shows and hides the interior grid lines with an optional crossfade animation. */
 - (void)setGridHidden:(BOOL)hidden animated:(BOOL)animated;
 
+/** Image is displayed over the gridlines, stretched to fill the entire area of the crop rectangle. */
+@property (nullable, nonatomic, assign) UIImage* overlayImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

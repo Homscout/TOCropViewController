@@ -36,6 +36,8 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
 @property (nonatomic, strong) NSArray *bottomRightLineViews;
 @property (nonatomic, strong) NSArray *topRightLineViews;
 
+@property (nonatomic, strong) UIImageView *imageView;
+
 @end
 
 @implementation TOCropOverlayView
@@ -63,6 +65,9 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
     _topRightLineViews  = @[newLineView(), newLineView()];
     _bottomRightLineViews = @[newLineView(), newLineView()];
     
+    self.imageView = [[UIImageView alloc] initWithImage:nil];
+    [self addSubview:self.imageView];
+    
     self.displayHorizontalGridLines = YES;
     self.displayVerticalGridLines = YES;
 }
@@ -73,6 +78,7 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
     if (_outerLineViews) {
         [self layoutLines];
     }
+    self.imageView.frame = self.bounds;
 }
 
 - (void)didMoveToSuperview
@@ -81,6 +87,7 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
     if (_outerLineViews) {
         [self layoutLines];
     }
+    self.imageView.frame = self.bounds;
 }
 
 - (void)layoutLines
@@ -217,6 +224,16 @@ static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
 - (void)setGridHidden:(BOOL)gridHidden
 {
     [self setGridHidden:gridHidden animated:NO];
+}
+
+- (void)setOverlayImage:(UIImage *)overlayImage
+{
+    self.imageView.image = overlayImage;
+}
+
+- (UIImage *)overlayImage
+{
+    return self.imageView.image;
 }
 
 #pragma mark - Private methods

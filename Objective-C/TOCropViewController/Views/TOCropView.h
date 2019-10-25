@@ -196,6 +196,10 @@ The minimum croping aspect ratio. If set, user is prevented from setting croppin
 // */
 //- (void)setTranslucencyOff:(BOOL)disableTranslucency;
 
+/**
+ Image is displayed over the gridlines, stretched to fill the entire area of the crop rectangle.
+ */
+@property (nullable, nonatomic, assign) UIImage* overlayImage;
 
 /**
  Create a default instance of the crop view with the supplied image

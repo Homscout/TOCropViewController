@@ -112,6 +112,11 @@
  */
 @property (nonnull, nonatomic, strong, readonly) TOCropView *cropView;
 
+/**
+ The overlay image shown inside the crop area.
+ */
+@property (nullable, nonatomic, assign) UIImage *cropOverlayImage;
+
 /** 
  In the coordinate space of the image itself, the region that is currently
  being highlighted by the crop box.

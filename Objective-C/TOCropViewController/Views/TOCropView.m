@@ -1171,6 +1171,16 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
     self.translucencyView.hidden = _translucencyAlwaysHidden;
 }
 
+- (void)setOverlayImage:(UIImage *)overlayImage
+{
+    self.gridOverlayView.overlayImage = overlayImage;
+}
+
+- (UIImage *)overlayImage
+{
+    return self.gridOverlayView.overlayImage;
+}
+
 - (void)setGridOverlayHidden:(BOOL)gridOverlayHidden
 {
     [self setGridOverlayHidden:_gridOverlayHidden animated:NO];
