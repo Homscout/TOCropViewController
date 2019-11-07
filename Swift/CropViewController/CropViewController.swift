@@ -125,6 +125,15 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
+     Permanently hides the translucency effect covering the outside bounds of the
+     crop box. (Default is NO)
+     */
+    public var translucencyAlwaysHidden: Bool {
+        set { toCropViewController.cropView.translucencyAlwaysHidden = newValue}
+        get { return toCropViewController.cropView.translucencyAlwaysHidden}
+    }
+    
+    /**
      In the coordinate space of the image itself, the region that is currently
      being highlighted by the crop box.
      
