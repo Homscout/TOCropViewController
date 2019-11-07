@@ -117,6 +117,14 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
+    The overlay image shown inside the crop area.
+    */
+    public var cropOverlayImage: UIImage? {
+        set { toCropViewController.cropOverlayImage = newValue}
+        get { return toCropViewController.cropOverlayImage }
+    }
+    
+    /**
      In the coordinate space of the image itself, the region that is currently
      being highlighted by the crop box.
      
